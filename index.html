@@ -4,7 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HESCO Midstream | Energy Consulting</title>
-  <meta name="description" content="HESCO Midstream provides practical energy consulting for operations, cost control, and execution support. Owners: Lonnie Wilson, Steve Loy, Monte Burton." />
+  <meta name="description" content="HESCO Midstream provides practical, execution-focused energy consulting for midstream operations across the United States." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HESCO Midstream | Energy Consulting" />
+  <meta property="og:description" content="Practical, execution-focused energy consulting built for real field conditions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hescomidstream.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Cpath d='M18 42V22h6v7h16v-7h6v20h-6v-8H24v8z' fill='%237dd3fc'/%3E%3C/svg%3E">
+
   <style>
     :root{
       --bg:#0b1220;
@@ -14,350 +24,242 @@
       --line:rgba(255,255,255,.12);
       --accent:#7dd3fc;
       --accent2:#a7f3d0;
-      --shadow: 0 18px 50px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1120px;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
     body{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
       background:
-        radial-gradient(1000px 600px at 20% -10%, rgba(125,211,252,.22), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(167,243,208,.18), transparent 60%),
+        radial-gradient(900px 520px at 10% -10%, rgba(125,211,252,.22), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(167,243,208,.18), transparent 60%),
         var(--bg);
       color:var(--text);
       line-height:1.5;
     }
     a{color:inherit}
     .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px}
+
     .topbar{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background: rgba(11,18,32,.65);
-      border-bottom: 1px solid var(--line);
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(10px);
+      background:rgba(11,18,32,.65);
+      border-bottom:1px solid var(--line);
     }
     .topbar .inner{
-      max-width:var(--max); margin:0 auto;
+      max-width:var(--max);
+      margin:0 auto;
       padding:14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:800; letter-spacing:.3px;
+      display:flex;align-items:center;gap:10px;
+      text-decoration:none;font-weight:900;
     }
     .mark{
       width:36px;height:36px;border-radius:12px;
-      background: linear-gradient(135deg, rgba(125,211,252,.9), rgba(167,243,208,.85));
-      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
     }
-    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
-    nav a{
-      text-decoration:none; color:var(--muted);
-      padding:8px 10px; border-radius:12px;
-    }
-    nav a:hover{background: rgba(255,255,255,.06); color:var(--text)}
     .cta{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius: 14px;
-      text-decoration:none;
-      background: linear-gradient(135deg, rgba(125,211,252,.95), rgba(167,243,208,.9));
+      padding:10px 16px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#06101f;
-      font-weight:800;
-      box-shadow: var(--shadow);
-      border: 0;
-      white-space:nowrap;
+      font-weight:900;
+      text-decoration:none;
     }
 
-    .hero{padding:58px 0 30px}
-    .grid{
-      display:grid; grid-template-columns: 1.15fr .85fr; gap:22px;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){
-      .grid{grid-template-columns: 1fr}
-      nav{display:none}
-    }
+    .hero{padding:60px 0 30px}
     .panel{
-      background: rgba(17,26,46,.72);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:22px;
+      background:rgba(17,26,46,.72);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
     }
     .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:6px 10px; border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      background: rgba(255,255,255,.04);
-      font-size: 13px;
-    }
-    h1{margin:12px 0 10px; font-size: clamp(30px, 4vw, 52px); line-height:1.05}
-    .sub{color:var(--muted); font-size: 16px; margin: 0 0 18px}
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px}
-    .ghost{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius:14px;
-      text-decoration:none;
-      color: var(--text);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .ghost:hover{background: rgba(255,255,255,.07)}
-    .mini{display:grid; gap:12px}
-    .stat{
-      padding:14px; border-radius: 16px;
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .stat b{display:block; font-size: 14px; margin-bottom:4px}
-    .stat span{color:var(--muted); font-size: 13px}
-    section{padding:18px 0}
-    h2{margin:0 0 10px; font-size: 22px}
-    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    @media (max-width: 920px){ .cards{grid-template-columns: 1fr} }
-    .card{
-      padding:16px; border-radius: 18px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .card h3{margin:0 0 6px; font-size: 16px}
-    .card p{margin:0; color: var(--muted); font-size: 14px}
-    .split{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    @media (max-width: 920px){ .split{grid-template-columns: 1fr} }
-    .list{margin:0; padding-left:18px; color:var(--muted)}
-    .list li{margin:8px 0}
-
-    .owners{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
-    }
-    @media (max-width: 920px){ .owners{grid-template-columns: 1fr} }
-    .owner{
-      padding:16px; border-radius: 18px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-    }
-    .owner b{display:block; font-size:16px; margin-bottom:6px}
-    .owner a{display:block; text-decoration:none}
-    .owner a:hover{text-decoration:underline}
-    .owner .meta{color:var(--muted); font-size:14px; line-height:1.35}
-
-    .footer{
-      padding:26px 0 40px;
-      border-top:1px solid var(--line);
       color:var(--muted);
       font-size:13px;
     }
-    .contact{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    @media (max-width: 920px){ .contact{grid-template-columns: 1fr} }
-    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(5,10,20,.45);
-      color: var(--text);
-      outline:none;
+    h1{
+      font-size:clamp(32px,4vw,52px);
+      line-height:1.05;
+      margin:14px 0;
     }
-    textarea{min-height:120px; resize:vertical}
-    .note{color:var(--muted); font-size:13px; margin-top:10px}
+    .sub{
+      color:var(--muted);
+      max-width:760px;
+      margin-bottom:10px;
+    }
+    .cred{
+      color:var(--accent);
+      font-weight:600;
+      margin-bottom:18px;
+    }
+    .hero-actions{margin-top:16px}
+
+    section{padding:18px 0}
+    h2{margin-bottom:10px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    @media(max-width:900px){
+      .cards{grid-template-columns:1fr}
+    }
+    .card{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+
+    .owners{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    @media(max-width:900px){
+      .owners{grid-template-columns:1fr}
+    }
+
+    .footer{
+      border-top:1px solid var(--line);
+      margin-top:40px;
+      padding:20px 0;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    input,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#0b1220;
+      color:var(--text);
+    }
+    textarea{min-height:120px}
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"HESCO Midstream",
+    "url":"https://hescomidstream.com",
+    "description":"Execution-focused energy consulting supporting midstream operations across the United States.",
+    "telephone":["+19363281946","+13615334081","+12819796049"],
+    "email":["lonnie.wilson@hescomidstream.com","sloy@hescomidstream.com","monte.burton@hescomidstream.com"]
+  }
+  </script>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="inner">
-      <a class="brand" href="#top">
-        <span class="mark" aria-hidden="true"></span>
-        <span>HESCO Midstream</span>
-      </a>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#owners">Owners</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="cta" href="#contact">Request a Call</a>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#">
+      <span class="mark"></span>
+      <span>HESCO Midstream</span>
+    </a>
+    <a class="cta" href="#contact">Request a Consultation</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="panel">
+      <div class="kicker">Energy Consulting • Practical • Execution-Focused</div>
+      <h1>Energy consulting that helps you make better decisions fast.</h1>
+      <p class="sub">
+        HESCO Midstream supports operators, contractors, and energy teams with clear guidance,
+        cost-conscious planning, and hands-on consulting—built for real field conditions.
+      </p>
+      <p class="cred">Supporting midstream operations across the United States</p>
+      <div class="hero-actions">
+        <a class="cta" href="#contact">Request a Consultation</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="top" class="wrap">
-    <section class="hero">
-      <div class="grid">
-        <div class="panel">
-          <div class="kicker">Energy Consulting • Practical • Execution-focused</div>
-          <h1>Energy consulting that helps you make better decisions fast.</h1>
-          <p class="sub">
-            HESCO Midstream supports operators, contractors, and energy teams with clear guidance,
-            cost-conscious planning, and hands-on consulting—built for real field conditions.
-          </p>
-
-          <div class="hero-actions">
-            <a class="cta" href="#contact">Get a Quote</a>
-            <a class="ghost" href="mailto:lonnie.wilson@hescomidstream.com,monte.burton@hescomidstream.com,sloy@hescomidstream.com?subject=HESCO%20Midstream%20Inquiry">Email the Owners</a>
-            <a class="ghost" href="tel:+19363281946">Call Lonnie: (936) 328-1946</a>
-          </div>
-
-          <p class="note">
-            Quick contact: email any owner, or call Lonnie Wilson directly.
-          </p>
+  <section id="services">
+    <div class="panel">
+      <h2>Services</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Operational Consulting</h3>
+          <p>Field-aligned support to improve execution, communication, and workflow.</p>
         </div>
-
-        <aside class="mini">
-          <div class="stat">
-            <b>Fast communication</b>
-            <span>Clear scope, clear deliverables, quick turnaround.</span>
-          </div>
-          <div class="stat">
-            <b>Field-aligned</b>
-            <span>Built for real operations—not slide decks.</span>
-          </div>
-          <div class="stat">
-            <b>Cost-conscious</b>
-            <span>We focus on practical wins that show up on the bottom line.</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="panel">
-        <h2>Services</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Operational Consulting</h3>
-            <p>Improve day-to-day execution, reduce friction, and tighten your workflows.</p>
-          </div>
-          <div class="card">
-            <h3>Cost & Scope Review</h3>
-            <p>Second set of eyes on budgets, vendor scopes, schedules, and risk items.</p>
-          </div>
-          <div class="card">
-            <h3>Project Support</h3>
-            <p>Planning, coordination, and field-aligned decision support—without the fluff.</p>
-          </div>
+        <div class="card">
+          <h3>Scope & Cost Review</h3>
+          <p>Independent review of scope, cost drivers, and vendor alignment.</p>
+        </div>
+        <div class="card">
+          <h3>Project Support</h3>
+          <p>Hands-on planning and coordination to protect schedule and budget.</p>
         </div>
       </div>
-    </section>
-
-    <section id="process">
-      <div class="panel">
-        <h2>How it works</h2>
-        <div class="split">
-          <div class="card">
-            <h3>1) Quick discovery</h3>
-            <p>15–30 minutes to understand your goal, timeline, and constraints.</p>
-          </div>
-          <div class="card">
-            <h3>2) Simple scope</h3>
-            <p>We send a short scope and price—clear deliverables, no surprises.</p>
-          </div>
-          <div class="card">
-            <h3>3) Execute</h3>
-            <p>We plug in where you need us: planning, calls, reviews, or on-site support.</p>
-          </div>
-          <div class="card">
-            <h3>4) Deliver</h3>
-            <p>Actionable outputs: recommendations, checklists, decisions, and next steps.</p>
-          </div>
-        </div>
-
-        <h3 style="margin:16px 0 8px;">Typical outcomes</h3>
-        <ul class="list">
-          <li>Fewer delays and rework through clearer scopes and decision points</li>
-          <li>More control over cost drivers and change orders</li>
-          <li>Stronger communication between office and field</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="owners">
-      <div class="panel">
-        <h2>Owners</h2>
-        <div class="owners">
-          <div class="owner">
-            <b>Steve Loy</b>
-            <div class="meta">
-              <a href="tel:+13615334081">(361) 533-4081</a>
-              <a href="mailto:sloy@hescomidstream.com">sloy@hescomidstream.com</a>
-            </div>
-          </div>
-
-          <div class="owner">
-            <b>Lonnie Wilson</b>
-            <div class="meta">
-              <a href="tel:+19363281946">(936) 328-1946</a>
-              <a href="mailto:lonnie.wilson@hescomidstream.com">lonnie.wilson@hescomidstream.com</a>
-            </div>
-          </div>
-
-          <div class="owner">
-            <b>Monte Burton</b>
-            <div class="meta">
-              <a href="tel:+12819796049">(281) 979-6049</a>
-              <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
-            </div>
-          </div>
-        </div>
-
-        <p class="note" style="margin-top:14px">
-          Click any phone number to call (mobile) or email address to message.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="panel">
-        <h2>Contact</h2>
-        <p class="sub" style="margin-top:0">
-          Send a quick note and we’ll get back to you.
-        </p>
-
-        <!-- Mailto form: no backend required -->
-        <form action="mailto:lonnie.wilson@hescomidstream.com,monte.burton@hescomidstream.com,sloy@hescomidstream.com"
-              method="post" enctype="text/plain">
-          <div class="contact">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div>
-              <label for="phone">Phone</label>
-              <input id="phone" name="phone" placeholder="(###) ###-####" />
-            </div>
-          </div>
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@company.com" required />
-
-          <label for="message">What do you need help with?</label>
-          <textarea id="message" name="message" placeholder="Brief scope, location, and timeline…"></textarea>
-
-          <div class="hero-actions" style="margin-top:14px">
-            <button class="cta" type="submit">Send Message</button>
-            <a class="ghost" href="mailto:lonnie.wilson@hescomidstream.com,monte.burton@hescomidstream.com,sloy@hescomidstream.com?subject=HESCO%20Midstream%20Inquiry">
-              Email the Owners
-            </a>
-          </div>
-
-          <p class="note">
-            This form opens the visitor’s email app (no hosting cost). If you want a “real” form later, we can add a free Google Form embed.
-          </p>
-        </form>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="year"></span> HESCO Midstream. All rights reserved.
     </div>
-  </main>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <section id="owners">
+    <div class="panel">
+      <h2>Owners</h2>
+      <div class="owners">
+        <div class="card">
+          <strong>Steve Loy</strong><br>
+          <a href="tel:+13615334081">(361) 533-4081</a><br>
+          <a href="mailto:sloy@hescomidstream.com">sloy@hescomidstream.com</a>
+        </div>
+        <div class="card">
+          <strong>Lonnie Wilson</strong><br>
+          <a href="tel:+19363281946">(936) 328-1946</a><br>
+          <a href="mailto:lonnie.wilson@hescomidstream.com">lonnie.wilson@hescomidstream.com</a>
+        </div>
+        <div class="card">
+          <strong>Monte Burton</strong><br>
+          <a href="tel:+12819796049">(281) 979-6049</a><br>
+          <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="panel">
+      <h2>Request a Consultation</h2>
+      <form action="mailto:lonnie.wilson@hescomidstream.com,monte.burton@hescomidstream.com,sloy@hescomidstream.com"
+            method="post" enctype="text/plain">
+        <input name="name" placeholder="Your name" required>
+        <br><br>
+        <input name="email" type="email" placeholder="Email address" required>
+        <br><br>
+        <textarea name="message" placeholder="Brief description of your needs"></textarea>
+        <br><br>
+        <button class="cta" type="submit">Send Request</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div>© <span id="year"></span> HESCO Midstream</div>
+    <div>Energy Consulting • Midstream Support</div>
+  </div>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
