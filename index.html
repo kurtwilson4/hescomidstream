@@ -60,26 +60,27 @@
       gap:16px;
     }
 
-    /* LOGO (circular, clean fit) */
+    /* LOGO (transparent PNG, same circular frame sizing as before) */
     .logo-wrap{
       width:120px;
       height:120px;
       border-radius:50%;
       overflow:hidden;                 /* clips to circle */
-      background:#ffffff;              /* matches logo background */
+      background:transparent;          /* IMPORTANT: no white sticker */
       display:flex;
       align-items:center;
       justify-content:center;
       box-shadow:0 10px 28px rgba(0,0,0,.35);
-      border:2px solid rgba(255,255,255,.6);
+      border:2px solid rgba(255,255,255,.30);
     }
     .logo-wrap img{
       width:100%;
       height:100%;
-      object-fit:contain;              /* fill without distortion */
+      object-fit:contain;              /* no distortion */
       object-position:center;
-      padding:14px;                    /* boosts readability */
+      padding:10px;                    /* keeps it readable */
       display:block;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); /* helps on dark bg */
     }
 
     .cta{
@@ -135,9 +136,13 @@
     }
     @media(max-width:900px){
       .cards{grid-template-columns:1fr}
+      .owners{grid-template-columns:1fr}
       .logo-wrap{
         width:96px;
         height:96px;
+      }
+      .logo-wrap img{
+        padding:8px;
       }
     }
     .card{
@@ -151,9 +156,6 @@
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:14px;
-    }
-    @media(max-width:900px){
-      .owners{grid-template-columns:1fr}
     }
 
     .footer{
@@ -201,7 +203,7 @@
 <header class="topbar">
   <div class="inner">
     <div class="logo-wrap">
-      <img src="hesco-logo.png.jpg" alt="HESCO Midstream Company LLC">
+      <img src="transparent-hesco-logo.png" alt="HESCO Midstream Company LLC">
     </div>
     <a class="cta" href="#contact">Request a Consultation</a>
   </div>
