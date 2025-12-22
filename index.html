@@ -7,13 +7,6 @@
   <title>HESCO Midstream | Midstream Energy Consulting & Project Support</title>
 
   <meta name="description" content="HESCO Midstream provides execution-focused midstream energy consulting, pipeline operations support, cost control, and project coordination across the United States." />
-  <meta name="keywords" content="midstream consulting, energy consulting services, pipeline consulting, midstream operations support, oil and gas consulting, pipeline project support, energy infrastructure consulting">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="HESCO Midstream | Midstream Energy Consulting" />
-  <meta property="og:description" content="Execution-focused consulting for midstream operations, pipeline projects, and energy infrastructure across the United States." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hescomidstream.com/" />
 
   <style>
     :root{
@@ -25,8 +18,6 @@
       --accent2:#a7f3d0;
       --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:18px;
-
-      /* BIGGER SITE WIDTH (this makes panels look larger like before) */
       --max:1320px;
     }
 
@@ -39,17 +30,17 @@
         radial-gradient(900px 520px at 90% 10%, rgba(167,243,208,.18), transparent 60%),
         var(--bg);
       color:var(--text);
-      line-height:1.55;
+      line-height:1.6;
     }
     a{color:inherit}
 
-    /* Less outer padding so content fills the page more */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:18px 18px 36px;
+      padding:24px 18px 80px; /* extra bottom space */
     }
 
+    /* HEADER */
     .topbar{
       position:sticky;top:0;z-index:20;
       backdrop-filter:blur(10px);
@@ -59,42 +50,37 @@
     .topbar .inner{
       max-width:var(--max);
       margin:0 auto;
-      padding:16px 18px;
+      padding:18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:16px;
     }
 
-    /* LOGO */
     .logo img{
       height:72px;
-      width:auto;
-      display:block;
       filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
     }
 
     .cta{
-      padding:10px 16px;
+      padding:12px 18px;
       border-radius:14px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#06101f;
       font-weight:900;
       text-decoration:none;
-      white-space:nowrap;
     }
 
-    /* Make hero feel bigger and force some scroll like before */
-    .hero{padding:38px 0 22px}
+    /* HERO — THIS IS THE MAIN LENGTH INCREASE */
+    .hero{
+      padding:70px 0 90px; /* taller hero */
+    }
 
     .panel{
       background:rgba(17,26,46,.72);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-
-      /* Slightly bigger padding = bigger look */
-      padding:36px;
+      padding:46px 44px; /* taller panels */
     }
 
     .kicker{
@@ -104,98 +90,82 @@
       border:1px solid var(--line);
       color:var(--muted);
       font-size:13px;
-      margin-bottom:12px;
+      margin-bottom:14px;
     }
 
     h1{
-      font-size:clamp(36px,4.2vw,60px);
+      font-size:clamp(38px,4.2vw,60px);
       line-height:1.05;
-      margin:10px 0 14px;
+      margin:12px 0 18px;
     }
 
     .sub{
       color:var(--muted);
       max-width:980px;
-      margin-bottom:12px;
-      font-size:16px;
+      margin-bottom:18px;
+      font-size:17px;
     }
 
     .cred{
       color:var(--accent);
       font-weight:600;
-      margin-top:6px;
-      font-size:15px;
+      font-size:16px;
     }
 
-    section{padding:18px 0}
-    h2{margin:0 0 12px}
+    /* SECTION SPACING — ADDS SCROLL */
+    section{
+      padding:46px 0;
+    }
+
+    h2{
+      margin-bottom:18px;
+    }
 
     .owners{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin-top:10px;
+      gap:20px;
     }
 
     .card{
-      padding:20px;
+      padding:26px;
       border-radius:16px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
     }
 
-    .footer{
-      border-top:1px solid var(--line);
-      margin-top:40px;
-      padding:20px 0;
-      color:var(--muted);
-      font-size:13px;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
     input,textarea{
       width:100%;
-      padding:12px;
+      padding:14px;
       border-radius:12px;
       border:1px solid var(--line);
       background:#0b1220;
       color:var(--text);
       font-size:15px;
     }
-    textarea{min-height:140px}
-    button{border:0;cursor:pointer}
+    textarea{min-height:160px}
+
+    .footer{
+      margin-top:90px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      color:var(--muted);
+      font-size:13px;
+    }
 
     @media(max-width:900px){
       .logo img{height:56px}
-      .panel{padding:26px}
       .owners{grid-template-columns:1fr}
-      h1{font-size:clamp(30px,7vw,44px)}
-      .sub{font-size:15px}
+      .panel{padding:32px}
+      section{padding:32px 0}
     }
   </style>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"HESCO Midstream",
-    "url":"https://hescomidstream.com",
-    "description":"Midstream energy consulting firm providing execution-focused support for pipeline operations, project coordination, and cost control across the United States.",
-    "areaServed":"United States",
-    "telephone":["+13615334081","+12819796049"],
-    "email":[
-      "sloy@hescomidstream.com",
-      "monte.burton@hescomidstream.com"
-    ]
-  }
-  </script>
 </head>
 
 <body>
+
 <header class="topbar">
   <div class="inner">
     <div class="logo">
@@ -219,7 +189,7 @@
     </div>
   </section>
 
-  <section id="owners">
+  <section>
     <div class="panel">
       <h2>Owners</h2>
       <div class="owners">
@@ -249,9 +219,9 @@
         <button class="cta" type="submit">Send Request</button>
       </form>
 
-      <p style="color:#b8c3e6;margin-top:14px;font-size:14px;">
+      <p style="color:#b8c3e6;margin-top:18px;font-size:14px;">
         If this form does not open your email app, email us directly at
-        <a href="mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com?subject=HESCO%20Midstream%20Consultation%20Request" style="text-decoration:underline;">
+        <a href="mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com" style="text-decoration:underline;">
           sloy@hescomidstream.com / monte.burton@hescomidstream.com
         </a>
       </p>
@@ -268,5 +238,6 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
