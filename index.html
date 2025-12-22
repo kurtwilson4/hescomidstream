@@ -7,7 +7,6 @@
   <title>HESCO Midstream | Midstream Energy Consulting & Project Support</title>
 
   <meta name="description" content="HESCO Midstream provides execution-focused midstream energy consulting, pipeline operations support, cost control, and project coordination across the United States." />
-
   <meta name="keywords" content="midstream consulting, energy consulting services, pipeline consulting, midstream operations support, oil and gas consulting, pipeline project support, energy infrastructure consulting">
 
   <!-- Open Graph -->
@@ -22,7 +21,6 @@
   <style>
     :root{
       --bg:#0b1220;
-      --card:#111a2e;
       --text:#e9eefc;
       --muted:#b8c3e6;
       --line:rgba(255,255,255,.12);
@@ -59,16 +57,24 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:16px;
     }
+
     .brand{
-      display:flex;align-items:center;gap:10px;
-      text-decoration:none;font-weight:900;
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      font-weight:900;
       letter-spacing:.3px;
     }
-    .mark{
-      width:36px;height:36px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
+
+    /* LOGO */
+    .logo{
+      height:38px;
+      width:auto;
+      display:block;
     }
+
     .cta{
       padding:10px 16px;
       border-radius:14px;
@@ -76,6 +82,7 @@
       color:#06101f;
       font-weight:900;
       text-decoration:none;
+      white-space:nowrap;
     }
 
     .hero{padding:64px 0 34px}
@@ -121,6 +128,7 @@
     }
     @media(max-width:900px){
       .cards{grid-template-columns:1fr}
+      .logo{height:34px;}
     }
     .card{
       padding:18px;
@@ -158,6 +166,7 @@
       color:var(--text);
     }
     textarea{min-height:120px}
+    button{border:0; cursor:pointer}
   </style>
 
   <!-- Structured Data -->
@@ -182,8 +191,7 @@
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="#">
-      <span class="mark"></span>
-      <span>HESCO Midstream</span>
+      <img src="hesco-logo.png.jpg" alt="HESCO Midstream Company LLC" class="logo">
     </a>
     <a class="cta" href="#contact">Request a Consultation</a>
   </div>
@@ -248,7 +256,7 @@
     <div class="panel">
       <h2>Request a Consultation</h2>
 
-      <form action="mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com"
+      <form action="mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com?subject=HESCO%20Midstream%20Consultation%20Request"
             method="post" enctype="text/plain">
         <input name="name" placeholder="Your name" required><br><br>
         <input name="email" type="email" placeholder="Email address" required><br><br>
@@ -262,7 +270,6 @@
           sloy@hescomidstream.com / monte.burton@hescomidstream.com
         </a>
       </p>
-
     </div>
   </section>
 
