@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>HESCO Midstream | Midstream Energy Consulting & Project Support</title>
-
-  <meta name="description" content="HESCO Midstream provides execution-focused midstream energy consulting, pipeline operations support, cost control, and project coordination across the United States." />
+  <title>HESCO Midstream | Midstream Energy Consulting</title>
+  <meta name="description" content="HESCO Midstream provides execution-focused midstream energy consulting across the United States." />
 
   <style>
     :root{
@@ -18,7 +16,9 @@
       --accent2:#a7f3d0;
       --shadow:0 18px 50px rgba(0,0,0,.35);
       --radius:18px;
-      --max:1320px;
+
+      /* ORIGINAL FEEL WIDTH */
+      --max:1120px;
     }
 
     *{box-sizing:border-box}
@@ -30,17 +30,17 @@
         radial-gradient(900px 520px at 90% 10%, rgba(167,243,208,.18), transparent 60%),
         var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.55;
     }
     a{color:inherit}
 
+    /* More vertical rhythm (this is what makes you scroll a bit) */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
-      padding:24px 18px 80px; /* extra bottom space */
+      padding:34px 18px 70px;
     }
 
-    /* HEADER */
     .topbar{
       position:sticky;top:0;z-index:20;
       backdrop-filter:blur(10px);
@@ -50,29 +50,34 @@
     .topbar .inner{
       max-width:var(--max);
       margin:0 auto;
-      padding:18px;
+      padding:16px 18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:16px;
     }
 
+    /* KEEP CURRENT LOGO */
     .logo img{
       height:72px;
+      width:auto;
+      display:block;
       filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
     }
 
     .cta{
-      padding:12px 18px;
+      padding:10px 16px;
       border-radius:14px;
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#06101f;
       font-weight:900;
       text-decoration:none;
+      white-space:nowrap;
     }
 
-    /* HERO — THIS IS THE MAIN LENGTH INCREASE */
+    /* Make hero taller so page has “weight” */
     .hero{
-      padding:70px 0 90px; /* taller hero */
+      padding:80px 0 46px;
     }
 
     .panel{
@@ -80,7 +85,7 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:46px 44px; /* taller panels */
+      padding:34px;
     }
 
     .kicker{
@@ -90,45 +95,45 @@
       border:1px solid var(--line);
       color:var(--muted);
       font-size:13px;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     h1{
-      font-size:clamp(38px,4.2vw,60px);
+      font-size:clamp(34px,4vw,54px);
       line-height:1.05;
-      margin:12px 0 18px;
+      margin:10px 0 14px;
     }
 
     .sub{
       color:var(--muted);
-      max-width:980px;
-      margin-bottom:18px;
-      font-size:17px;
+      max-width:820px;
+      margin-bottom:12px;
+      font-size:16px;
     }
 
     .cred{
       color:var(--accent);
       font-weight:600;
-      font-size:16px;
+      margin-top:8px;
+      font-size:15px;
     }
 
-    /* SECTION SPACING — ADDS SCROLL */
+    /* More spacing between sections (adds scroll like before) */
     section{
-      padding:46px 0;
+      padding:30px 0;
     }
 
-    h2{
-      margin-bottom:18px;
-    }
+    h2{margin:0 0 14px}
 
     .owners{
       display:grid;
       grid-template-columns:repeat(2,1fr);
-      gap:20px;
+      gap:14px;
+      margin-top:10px;
     }
 
     .card{
-      padding:26px;
+      padding:18px;
       border-radius:16px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
@@ -136,36 +141,44 @@
 
     input,textarea{
       width:100%;
-      padding:14px;
+      padding:12px;
       border-radius:12px;
       border:1px solid var(--line);
       background:#0b1220;
       color:var(--text);
       font-size:15px;
     }
-    textarea{min-height:160px}
+    textarea{min-height:150px}
+    button{border:0;cursor:pointer}
 
     .footer{
-      margin-top:90px;
-      padding-top:24px;
       border-top:1px solid var(--line);
-      display:flex;
-      justify-content:space-between;
+      margin-top:50px;
+      padding:22px 0;
       color:var(--muted);
       font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    /* Visible build tag so you can confirm the update deployed */
+    .build-tag{
+      opacity:.6;
+      font-size:12px;
     }
 
     @media(max-width:900px){
       .logo img{height:56px}
+      .panel{padding:26px}
       .owners{grid-template-columns:1fr}
-      .panel{padding:32px}
-      section{padding:32px 0}
+      .hero{padding:64px 0 38px}
     }
   </style>
 </head>
 
 <body>
-
 <header class="topbar">
   <div class="inner">
     <div class="logo">
@@ -189,7 +202,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="owners">
     <div class="panel">
       <h2>Owners</h2>
       <div class="owners">
@@ -219,9 +232,9 @@
         <button class="cta" type="submit">Send Request</button>
       </form>
 
-      <p style="color:#b8c3e6;margin-top:18px;font-size:14px;">
+      <p style="color:#b8c3e6;margin-top:14px;font-size:14px;">
         If this form does not open your email app, email us directly at
-        <a href="mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com" style="text-decoration:underline;">
+        <a href="mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com?subject=HESCO%20Midstream%20Consultation%20Request" style="text-decoration:underline;">
           sloy@hescomidstream.com / monte.burton@hescomidstream.com
         </a>
       </p>
@@ -230,7 +243,7 @@
 
   <div class="footer">
     <div>© <span id="year"></span> HESCO Midstream</div>
-    <div>Midstream Energy Consulting • Pipeline & Operations Support</div>
+    <div class="build-tag">Build: v2</div>
   </div>
 
 </main>
@@ -238,6 +251,5 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
