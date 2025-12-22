@@ -15,9 +15,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hescomidstream.com/" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Cpath d='M18 42V22h6v7h16v-7h6v20h-6v-8H24v8z' fill='%237dd3fc'/%3E%3C/svg%3E">
-
   <style>
     :root{
       --bg:#0b1220;
@@ -53,34 +50,25 @@
     .topbar .inner{
       max-width:var(--max);
       margin:0 auto;
-      padding:14px 18px;
+      padding:18px;
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:16px;
     }
 
-    /* LOGO (transparent PNG, same circular frame sizing as before) */
-    .logo-wrap{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      overflow:hidden;                 /* clips to circle */
-      background:transparent;          /* IMPORTANT: no white sticker */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 10px 28px rgba(0,0,0,.35);
-      border:2px solid rgba(255,255,255,.30);
-    }
-    .logo-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:contain;              /* no distortion */
-      object-position:center;
-      padding:10px;                    /* keeps it readable */
+    /* LOGO – larger, clean, no border */
+    .logo img{
+      height:72px;
+      width:auto;
       display:block;
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); /* helps on dark bg */
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+    }
+
+    @media(max-width:900px){
+      .logo img{
+        height:56px;
+      }
     }
 
     .cta{
@@ -125,7 +113,6 @@
       font-weight:600;
       margin-bottom:20px;
     }
-    .hero-actions{margin-top:18px}
 
     section{padding:20px 0}
     h2{margin-bottom:12px}
@@ -137,13 +124,6 @@
     @media(max-width:900px){
       .cards{grid-template-columns:1fr}
       .owners{grid-template-columns:1fr}
-      .logo-wrap{
-        width:96px;
-        height:96px;
-      }
-      .logo-wrap img{
-        padding:8px;
-      }
     }
     .card{
       padding:18px;
@@ -180,29 +160,12 @@
     textarea{min-height:120px}
     button{border:0; cursor:pointer}
   </style>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"HESCO Midstream",
-    "url":"https://hescomidstream.com",
-    "description":"Midstream energy consulting firm providing execution-focused support for pipeline operations, project coordination, and cost control across the United States.",
-    "areaServed":"United States",
-    "telephone":["+13615334081","+12819796049"],
-    "email":[
-      "sloy@hescomidstream.com",
-      "monte.burton@hescomidstream.com"
-    ]
-  }
-  </script>
 </head>
 
 <body>
 <header class="topbar">
   <div class="inner">
-    <div class="logo-wrap">
+    <div class="logo">
       <img src="transparent-hesco-logo.png" alt="HESCO Midstream Company LLC">
     </div>
     <a class="cta" href="#contact">Request a Consultation</a>
@@ -220,33 +183,10 @@
         pipeline execution support, and cost-conscious decision-making—built for real field conditions.
       </p>
       <p class="cred">Supporting midstream operations across the United States</p>
-      <div class="hero-actions">
-        <a class="cta" href="#contact">Request a Consultation</a>
-      </div>
     </div>
   </section>
 
-  <section id="services">
-    <div class="panel">
-      <h2>Midstream Consulting Services</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Operational & Pipeline Consulting</h3>
-          <p>Field-aligned consulting for pipeline operations, workflow improvements, and execution support.</p>
-        </div>
-        <div class="card">
-          <h3>Scope, Cost & Vendor Review</h3>
-          <p>Independent review of scopes, cost drivers, and vendor alignment to reduce rework and protect budgets.</p>
-        </div>
-        <div class="card">
-          <h3>Project & Execution Support</h3>
-          <p>Hands-on planning, coordination, and decision support for midstream and energy infrastructure projects.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="owners">
+  <section>
     <div class="panel">
       <h2>Owners</h2>
       <div class="owners">
