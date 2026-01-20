@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HESCO Midstream | Energy Consulting</title>
-  <meta name="description" content="HESCO Midstream supports operators and contractors with practical consulting, pipeline execution support, and cost-conscious decision-making." />
 
   <style>
     :root{
@@ -18,25 +17,26 @@
       --accent2:#9cf2ff;
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --radius:18px;
-      --max: 1080px;
+      --max:1080px;
     }
 
     *{box-sizing:border-box}
+
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
       color:var(--text);
       background:
         radial-gradient(1200px 700px at 80% 10%, rgba(127,225,255,.12), transparent 55%),
         radial-gradient(900px 600px at 20% 25%, rgba(156,242,255,.10), transparent 50%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        linear-gradient(180deg,var(--bg0),var(--bg1));
     }
 
     header{
       position:sticky;
       top:0;
-      backdrop-filter: blur(10px);
-      background: rgba(5,10,20,.65);
+      backdrop-filter:blur(10px);
+      background:rgba(5,10,20,.65);
       border-bottom:1px solid rgba(255,255,255,.06);
       z-index:10;
     }
@@ -50,9 +50,7 @@
       align-items:center;
     }
 
-    .logo{
-      height:44px;
-    }
+    .logo{height:44px}
 
     .cta{
       padding:12px 18px;
@@ -93,10 +91,7 @@
       margin:0;
     }
 
-    p{
-      color:var(--muted);
-      max-width:75ch;
-    }
+    p{color:var(--muted);max-width:75ch}
 
     .subline{
       margin-top:12px;
@@ -104,14 +99,12 @@
       font-weight:700;
     }
 
-    h2{
-      margin:0 0 14px;
-    }
+    h2{margin:0 0 14px}
 
     /* OWNERS */
     .owners-grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:14px;
     }
 
@@ -127,14 +120,15 @@
       font-size:14px;
     }
 
+    /* ✅ FIXED LINK COLOR */
     .owner-card a{
       display:block;
       font-size:13px;
+      color:var(--accent);
       text-decoration:underline;
       margin-top:4px;
     }
 
-    /* FORM */
     .field{
       width:100%;
       padding:12px;
@@ -165,10 +159,8 @@
       border-top:1px solid rgba(255,255,255,.06);
     }
 
-    @media (max-width: 900px){
-      .owners-grid{
-        grid-template-columns:1fr;
-      }
+    @media (max-width:900px){
+      .owners-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -177,7 +169,7 @@
 
 <header>
   <div class="nav">
-    <img src="transparent-hesco-logo.png" alt="HESCO Midstream" class="logo">
+    <img src="transparent-hesco-logo.png" class="logo" alt="HESCO Midstream">
     <button class="cta" onclick="document.getElementById('consultation').scrollIntoView({behavior:'smooth'})">
       Request a Consultation
     </button>
@@ -222,10 +214,9 @@
 
   <section class="panel" id="consultation">
     <h2>Request a Consultation</h2>
-
-    <form onsubmit="event.preventDefault(); window.location.href='mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com,morgan.saunders@hescomidstream.com';">
-      <input class="field" placeholder="Your name" required>
-      <input class="field" type="email" placeholder="Email address" required>
+    <form>
+      <input class="field" placeholder="Your name">
+      <input class="field" type="email" placeholder="Email address">
       <textarea class="field" placeholder="Brief description of your project, location, and timeline"></textarea>
       <button class="btn">Send Request</button>
     </form>
@@ -234,7 +225,7 @@
 </main>
 
 <footer>
-  © <span id="year"></span> HESCO Midstream Company LLC • All rights reserved.
+  © <span id="year"></span> HESCO Midstream Company LLC
 </footer>
 
 <script>
