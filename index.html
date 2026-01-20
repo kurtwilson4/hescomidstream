@@ -30,12 +30,12 @@
       margin-bottom: 40px;
     }
 
-    /* 🔒 LOGO — THIS IS THE ONLY LOGO CHANGE */
+    /* 🔒 LOGO — ONLY CHANGE HERE (BIGGER, BUT RESPONSIVE) */
     #siteLogo {
-      width: 260px !important;
+      width: 420px !important;
       height: auto !important;
-      max-width: none !important;
-      flex: 0 0 auto !important;
+      max-width: 100% !important;
+      flex: 0 1 auto !important;
       display: block;
     }
 
@@ -48,6 +48,7 @@
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .card {
@@ -148,6 +149,16 @@
 
       h1 {
         font-size: 34px;
+      }
+
+      /* Keep header clean on mobile */
+      header {
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      #siteLogo {
+        width: 320px !important;
       }
     }
   </style>
