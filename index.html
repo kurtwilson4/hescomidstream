@@ -11,402 +11,235 @@
       --bg0:#050a14;
       --bg1:#070f20;
       --card:#0c1830cc;
-      --card2:#0b162bcc;
       --stroke:rgba(255,255,255,.10);
-      --stroke2:rgba(255,255,255,.14);
       --text:#e9eefc;
       --muted:rgba(233,238,252,.72);
-      --muted2:rgba(233,238,252,.55);
       --accent:#7fe1ff;
       --accent2:#9cf2ff;
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --radius:18px;
-      --radius2:24px;
       --max: 1080px;
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
         radial-gradient(1200px 700px at 80% 10%, rgba(127,225,255,.12), transparent 55%),
         radial-gradient(900px 600px at 20% 25%, rgba(156,242,255,.10), transparent 50%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
-      overflow-x:hidden;
-    }
-
-    a{color:var(--text); text-decoration:none}
-    a:hover{opacity:.9}
-
-    /* subtle top glow line */
-    .topline{
-      position:absolute; inset:0 0 auto 0;
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
-      opacity:.65;
-      pointer-events:none;
     }
 
     header{
       position:sticky;
       top:0;
-      z-index:20;
       backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(5,10,20,.82), rgba(5,10,20,.35));
+      background: rgba(5,10,20,.65);
       border-bottom:1px solid rgba(255,255,255,.06);
+      z-index:10;
     }
+
     .nav{
-      max-width: var(--max);
+      max-width:var(--max);
       margin:0 auto;
       padding:16px 20px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:16px;
+      align-items:center;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 180px;
-    }
     .logo{
-      height:44px; /* <-- logo size (kept bigger) */
-      width:auto;
-      display:block;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+      height:44px;
     }
 
     .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
       padding:12px 18px;
       border-radius:999px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#02101a;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      border:none;
       font-weight:800;
-      letter-spacing:.2px;
-      border:1px solid rgba(255,255,255,.22);
-      box-shadow: 0 14px 32px rgba(127,225,255,.12);
       cursor:pointer;
-      user-select:none;
-      white-space:nowrap;
     }
-    .cta:hover{transform: translateY(-1px)}
-    .cta:active{transform: translateY(0px)}
-    .cta:focus{outline:3px solid rgba(127,225,255,.30); outline-offset:3px}
 
     main{
-      max-width: var(--max);
+      max-width:var(--max);
       margin:0 auto;
-      padding: 36px 20px 88px;
+      padding:36px 20px 80px;
     }
-
-    .stack{display:flex; flex-direction:column; gap:26px}
 
     .panel{
-      background: linear-gradient(180deg, rgba(12,24,48,.70), rgba(10,20,40,.55));
+      background:linear-gradient(180deg, rgba(12,24,48,.70), rgba(10,20,40,.55));
       border:1px solid var(--stroke);
-      border-radius: var(--radius2);
-      box-shadow: var(--shadow);
-      overflow:hidden;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin-bottom:26px;
     }
 
-    .hero{
-      padding:30px 28px 30px;
-    }
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:7px 12px;
+      display:inline-block;
+      padding:6px 12px;
       border-radius:999px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      color:rgba(233,238,252,.84);
       font-size:12px;
-      letter-spacing:.25px;
+      border:1px solid rgba(255,255,255,.12);
       margin-bottom:14px;
     }
-    .hero h1{
-      margin:0;
-      font-size: clamp(34px, 5.0vw, 64px);
+
+    h1{
+      font-size:clamp(34px,5vw,60px);
       line-height:1.05;
-      letter-spacing:-.9px;
+      margin:0;
     }
-    .hero p{
-      margin:14px 0 0;
+
+    p{
       color:var(--muted);
-      font-size: 14.5px;
-      line-height:1.55;
-      max-width: 78ch;
+      max-width:75ch;
     }
-    .hero .subline{
+
+    .subline{
       margin-top:12px;
-      color: var(--accent);
+      color:var(--accent);
       font-weight:700;
-      font-size:13.5px;
     }
 
-    .section{
-      padding:26px 26px 22px;
-    }
-    .section h2{
+    h2{
       margin:0 0 14px;
-      font-size: 20px;
-      letter-spacing:-.2px;
     }
 
-    /* Owners grid (keep original feel) */
+    /* OWNERS */
     .owners-grid{
       display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap:14px;
     }
+
     .owner-card{
-      background: rgba(255,255,255,.03);
+      background:rgba(255,255,255,.03);
       border:1px solid rgba(255,255,255,.10);
-      border-radius: 14px;
-      padding:16px 16px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      min-height: 96px;
+      border-radius:14px;
+      padding:16px;
     }
+
     .owner-card h3{
       margin:0 0 8px;
-      font-size: 14px;
-      letter-spacing:.1px;
+      font-size:14px;
     }
-    .owner-card a, .owner-card .phone{
+
+    .owner-card a{
       display:block;
-      color: rgba(233,238,252,.88);
-      font-size: 13px;
+      font-size:13px;
+      text-decoration:underline;
       margin-top:4px;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-thickness: 1px;
-      opacity:.95;
-    }
-    .owner-card a:hover{opacity:1}
-
-    /* Morgan: centered on row 2, same width as other cards */
-    .owner-center{
-      grid-column: 1 / -1;         /* span both columns (creates row 2) */
-      display:flex;
-      justify-content:center;       /* center it */
-    }
-    .owner-center .owner-card{
-      width: 100%;
-      max-width: 520px;             /* matches the “feel” of the other cards */
     }
 
-    /* Form */
-    form{display:flex; flex-direction:column; gap:14px; margin-top: 10px}
+    /* FORM */
     .field{
       width:100%;
-      background: rgba(0,0,0,.18);
+      padding:12px;
+      border-radius:12px;
       border:1px solid rgba(255,255,255,.10);
-      border-radius: 12px;
-      padding:12px 12px;
-      color: var(--text);
-      font-size: 14px;
-      outline:none;
+      background:rgba(0,0,0,.2);
+      color:var(--text);
+      margin-bottom:12px;
     }
-    .field::placeholder{color: rgba(233,238,252,.40)}
-    textarea.field{min-height: 140px; resize: vertical}
-    .submit-row{
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      gap:12px;
-      margin-top: 2px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:11px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.20);
-      background: linear-gradient(135deg, rgba(127,225,255,.92), rgba(156,242,255,.86));
-      color:#02101a;
-      font-weight:800;
-      cursor:pointer;
-      box-shadow: 0 14px 32px rgba(127,225,255,.10);
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn:active{transform: translateY(0px)}
 
-    .note{
-      color: var(--muted2);
-      font-size: 12.5px;
-      line-height: 1.45;
-      max-width: 80ch;
-    }
-    .toast{
-      display:none;
-      margin-top: 8px;
-      padding:10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(127,225,255,.28);
-      background: rgba(127,225,255,.08);
-      color: rgba(233,238,252,.9);
-      font-size: 13px;
+    textarea.field{min-height:140px}
+
+    .btn{
+      padding:12px 18px;
+      border-radius:999px;
+      border:none;
+      font-weight:800;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      cursor:pointer;
     }
 
     footer{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 22px 20px 36px;
-      color: rgba(233,238,252,.45);
-      font-size: 12.5px;
-      border-top: 1px solid rgba(255,255,255,.06);
+      max-width:var(--max);
+      margin:0 auto;
+      padding:24px 20px;
+      color:rgba(233,238,252,.45);
+      font-size:12px;
+      border-top:1px solid rgba(255,255,255,.06);
     }
 
-    /* Responsive */
-    @media (max-width: 720px){
-      .owners-grid{grid-template-columns: 1fr}
-      .owner-center{grid-column:auto; justify-content:stretch}
-      .owner-center .owner-card{max-width:none}
-      .logo{height:40px}
-      .hero{padding:26px 18px}
-      .section{padding:22px 18px}
+    @media (max-width: 900px){
+      .owners-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="topline"></div>
 
-  <header>
-    <div class="nav">
-      <div class="brand" aria-label="HESCO Midstream">
-        <img class="logo" src="transparent-hesco-logo.png" alt="HESCO Midstream Company LLC logo">
+<header>
+  <div class="nav">
+    <img src="transparent-hesco-logo.png" alt="HESCO Midstream" class="logo">
+    <button class="cta" onclick="document.getElementById('consultation').scrollIntoView({behavior:'smooth'})">
+      Request a Consultation
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="panel">
+    <div class="pill">Midstream Energy Consulting • Execution-Focused</div>
+    <h1>Midstream energy consulting that helps you make better decisions—fast.</h1>
+    <p>
+      HESCO Midstream supports operators and contractors with practical consulting,
+      pipeline execution support, and cost-conscious decision-making—built for real field conditions.
+    </p>
+    <div class="subline">Supporting midstream operations across the United States</div>
+  </section>
+
+  <section class="panel">
+    <h2>Owners</h2>
+
+    <div class="owners-grid">
+      <div class="owner-card">
+        <h3>Steve Loy</h3>
+        <a href="tel:+13615334081">(361) 533-4081</a>
+        <a href="mailto:sloy@hescomidstream.com">sloy@hescomidstream.com</a>
       </div>
 
-      <button class="cta" type="button" id="scrollToForm">Request a Consultation</button>
+      <div class="owner-card">
+        <h3>Monte Burton</h3>
+        <a href="tel:+12819796049">(281) 979-6049</a>
+        <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
+      </div>
+
+      <div class="owner-card">
+        <h3>Morgan Saunders — CEO</h3>
+        <a href="tel:+13047809712">(304) 780-9712</a>
+        <a href="mailto:morgan.saunders@hescomidstream.com">morgan.saunders@hescomidstream.com</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <div class="stack">
+  <section class="panel" id="consultation">
+    <h2>Request a Consultation</h2>
 
-      <!-- HERO -->
-      <section class="panel hero" aria-label="Hero">
-        <div class="pill">Midstream Energy Consulting • Execution-Focused</div>
+    <form onsubmit="event.preventDefault(); window.location.href='mailto:sloy@hescomidstream.com,monte.burton@hescomidstream.com,morgan.saunders@hescomidstream.com';">
+      <input class="field" placeholder="Your name" required>
+      <input class="field" type="email" placeholder="Email address" required>
+      <textarea class="field" placeholder="Brief description of your project, location, and timeline"></textarea>
+      <button class="btn">Send Request</button>
+    </form>
+  </section>
 
-        <h1>Midstream energy consulting that helps you make better decisions—fast.</h1>
+</main>
 
-        <p>
-          HESCO Midstream supports operators and contractors with practical consulting, pipeline execution support, and
-          cost-conscious decision-making—built for real field conditions.
-        </p>
+<footer>
+  © <span id="year"></span> HESCO Midstream Company LLC • All rights reserved.
+</footer>
 
-        <div class="subline">Supporting midstream operations across the United States</div>
-      </section>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-      <!-- OWNERS -->
-      <section class="panel section" aria-label="Owners">
-        <h2>Owners</h2>
-
-        <div class="owners-grid">
-          <!-- Row 1 -->
-          <div class="owner-card">
-            <h3>Steve Loy</h3>
-            <a class="phone" href="tel:+13615334081">(361) 533-4081</a>
-            <a href="mailto:sloy@hescomidstream.com">sloy@hescomidstream.com</a>
-          </div>
-
-          <div class="owner-card">
-            <h3>Monte Burton</h3>
-            <a class="phone" href="tel:+12819796049">(281) 979-6049</a>
-            <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
-          </div>
-
-          <!-- Row 2 (centered, same width as the other cards) -->
-          <div class="owner-center">
-            <div class="owner-card">
-              <h3>Morgan Saunders — CEO</h3>
-              <a class="phone" href="tel:+13047809712">(304) 780-9712</a>
-              <a href="mailto:morgan.saunders@hescomidstream.com">morgan.saunders@hescomidstream.com</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FORM -->
-      <section class="panel section" aria-label="Request a Consultation" id="consultation">
-        <h2>Request a Consultation</h2>
-
-        <form id="consultForm">
-          <input class="field" type="text" name="name" placeholder="Your name" required>
-          <input class="field" type="email" name="email" placeholder="Email address" required>
-          <textarea class="field" name="details" placeholder="Brief description of your project, location, and timeline" required></textarea>
-
-          <div class="submit-row">
-            <button class="btn" type="submit">Send Request</button>
-          </div>
-
-          <div class="note">
-            <strong>Fallback:</strong> This form uses a simple email fallback (it opens your default email app)
-            so it works on GitHub Pages without any paid services. If you later want submissions to go to an inbox
-            automatically (no email app needed), you can connect a form service (Formspree, Basin, etc.) or a lightweight backend.
-          </div>
-
-          <div class="toast" id="toast"></div>
-        </form>
-      </section>
-
-    </div>
-  </main>
-
-  <footer>
-    © <span id="year"></span> HESCO Midstream Company LLC • All rights reserved.
-  </footer>
-
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Smooth scroll to form
-    document.getElementById("scrollToForm").addEventListener("click", () => {
-      const el = document.getElementById("consultation");
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-
-    // Simple mailto fallback (GitHub Pages-friendly)
-    const OWNERS_EMAILS = [
-      "sloy@hescomidstream.com",
-      "monte.burton@hescomidstream.com",
-      "morgan.saunders@hescomidstream.com"
-    ].join(",");
-
-    const form = document.getElementById("consultForm");
-    const toast = document.getElementById("toast");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const fd = new FormData(form);
-      const name = (fd.get("name") || "").toString().trim();
-      const email = (fd.get("email") || "").toString().trim();
-      const details = (fd.get("details") || "").toString().trim();
-
-      const subject = encodeURIComponent("HESCO Midstream – Consultation Request");
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${details}\n`
-      );
-
-      // Show a small message, then open email client
-      toast.style.display = "block";
-      toast.textContent = "Opening your email app to send the request… If nothing opens, make sure you have a default email app set.";
-
-      window.location.href = `mailto:${OWNERS_EMAILS}?subject=${subject}&body=${body}`;
-    });
-  </script>
 </body>
 </html>
