@@ -1,241 +1,218 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HESCO Midstream | Energy Consulting</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HESCO Midstream Company LLC</title>
 
   <style>
-    :root{
-      --bg0:#050a14;
-      --bg1:#070f20;
-      --card:#0c1830cc;
-      --stroke:rgba(255,255,255,.10);
-      --text:#e9eefc;
-      --muted:rgba(233,238,252,.72);
-      --accent:#7fe1ff;
-      --accent2:#9cf2ff;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius:18px;
-      --max:1080px;
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 80% 10%, rgba(127,225,255,.12), transparent 55%),
-        radial-gradient(900px 600px at 20% 25%, rgba(156,242,255,.10), transparent 50%),
-        linear-gradient(180deg,var(--bg0),var(--bg1));
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 50% -200px, #1b2b42, #050b16);
+      color: #e6f0ff;
     }
 
-    header{
-      position:sticky;
-      top:0;
-      backdrop-filter:blur(10px);
-      background:rgba(5,10,20,.65);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      z-index:10;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
     }
 
-    .nav{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:16px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
     }
 
-.logo img {
-  width: 260px;        
-  max-width: none;
-  height: auto;
-  display: block;
-}
-
-    .cta{
-      padding:12px 18px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      border:none;
-      font-weight:800;
-      cursor:pointer;
+    /* 🔒 LOGO — THIS IS THE ONLY LOGO CHANGE */
+    #siteLogo {
+      width: 260px !important;
+      height: auto !important;
+      max-width: none !important;
+      flex: 0 0 auto !important;
+      display: block;
     }
 
-    main{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:36px 20px 80px;
+    .cta-btn {
+      background: #8fe3ff;
+      color: #001018;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
     }
 
-    .panel{
-      background:linear-gradient(180deg, rgba(12,24,48,.70), rgba(10,20,40,.55));
-      border:1px solid var(--stroke);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      padding:28px;
-      margin-bottom:26px;
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
     }
 
-    .pill{
-      display:inline-block;
-      padding:6px 12px;
-      border-radius:999px;
-      font-size:12px;
-      border:1px solid rgba(255,255,255,.12);
-      margin-bottom:14px;
+    .pill {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: rgba(143,227,255,0.15);
+      color: #8fe3ff;
+      margin-bottom: 14px;
     }
 
-    h1{
-      font-size:clamp(34px,5vw,60px);
-      line-height:1.05;
-      margin:0;
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin: 0 0 16px;
     }
 
-    p{color:var(--muted);max-width:75ch}
-
-    .subline{
-      margin-top:12px;
-      color:var(--accent);
-      font-weight:700;
+    p {
+      line-height: 1.6;
+      color: #cfe3ff;
+      max-width: 850px;
     }
 
-    h2{margin:0 0 14px}
-
-    /* OWNERS */
-    .owners-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
+    .highlight {
+      color: #8fe3ff;
+      margin-top: 10px;
+      font-weight: 500;
     }
 
-    .owner-card{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:14px;
-      padding:16px;
+    .owners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .owner-card h3{
-      margin:0 0 8px;
-      font-size:14px;
+    .owner-card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
     }
 
-    /* ✅ FIXED LINK COLOR */
-    .owner-card a{
-      display:block;
-      font-size:13px;
-      color:var(--accent);
-      text-decoration:underline;
-      margin-top:4px;
+    .owner-card strong {
+      display: block;
+      margin-bottom: 6px;
     }
 
-    .field{
-      width:100%;
-      padding:12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.2);
-      color:var(--text);
-      margin-bottom:12px;
+    .owner-card a {
+      color: #8fe3ff;
+      text-decoration: none;
+      display: block;
+      margin-top: 4px;
     }
 
-    textarea.field{min-height:140px}
-
-    .btn{
-      padding:12px 18px;
-      border-radius:999px;
-      border:none;
-      font-weight:800;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      cursor:pointer;
+    .form-group {
+      margin-bottom: 18px;
     }
 
-    footer{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:24px 20px;
-      color:rgba(233,238,252,.45);
-      font-size:12px;
-      border-top:1px solid rgba(255,255,255,.06);
+    input, textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,0.06);
+      color: #e6f0ff;
+      font-size: 15px;
     }
 
-    @media (max-width:900px){
-      .owners-grid{grid-template-columns:1fr}
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button.submit {
+      margin-top: 10px;
+      background: #8fe3ff;
+      color: #001018;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .owners-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
 
-<header>
-  <div class="nav">
-    <img src="transparent-hesco-logo.png" class="logo" alt="HESCO Midstream">
-    <button class="cta" onclick="document.getElementById('consultation').scrollIntoView({behavior:'smooth'})">
-      Request a Consultation
-    </button>
-  </div>
-</header>
+    <header>
+      <img id="siteLogo" src="transparent-hesco-logo.png" alt="HESCO Midstream Company LLC">
+      <a href="#consultation" class="cta-btn">Request a Consultation</a>
+    </header>
 
-<main>
-
-  <section class="panel">
-    <div class="pill">Midstream Energy Consulting • Execution-Focused</div>
-    <h1>Midstream energy consulting that helps you make better decisions—fast.</h1>
-    <p>
-      HESCO Midstream supports operators and contractors with practical consulting,
-      pipeline execution support, and cost-conscious decision-making—built for real field conditions.
-    </p>
-    <div class="subline">Supporting midstream operations across the United States</div>
-  </section>
-
-  <section class="panel">
-    <h2>Owners</h2>
-
-    <div class="owners-grid">
-      <div class="owner-card">
-        <h3>Steve Loy</h3>
-        <a href="tel:+13615334081">(361) 533-4081</a>
-        <a href="mailto:sloy@hescomidstream.com">sloy@hescomidstream.com</a>
-      </div>
-
-      <div class="owner-card">
-        <h3>Monte Burton</h3>
-        <a href="tel:+12819796049">(281) 979-6049</a>
-        <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
-      </div>
-
-      <div class="owner-card">
-        <h3>Morgan Saunders — CEO</h3>
-        <a href="tel:+13047809712">(304) 780-9712</a>
-        <a href="mailto:morgan.saunders@hescomidstream.com">morgan.saunders@hescomidstream.com</a>
+    <div class="card">
+      <span class="pill">Midstream Energy Consulting · Execution-Focused</span>
+      <h1>Midstream energy consulting that helps you make better decisions—fast.</h1>
+      <p>
+        HESCO Midstream supports operators and contractors with practical consulting,
+        pipeline execution support, and cost-conscious decision-making—built for real
+        field conditions.
+      </p>
+      <div class="highlight">
+        Supporting midstream operations across the United States
       </div>
     </div>
-  </section>
 
-  <section class="panel" id="consultation">
-    <h2>Request a Consultation</h2>
-    <form>
-      <input class="field" placeholder="Your name">
-      <input class="field" type="email" placeholder="Email address">
-      <textarea class="field" placeholder="Brief description of your project, location, and timeline"></textarea>
-      <button class="btn">Send Request</button>
-    </form>
-  </section>
+    <div class="card">
+      <h2>Owners</h2>
+      <div class="owners-grid">
+        <div class="owner-card">
+          <strong>Steve Loy</strong>
+          (361) 533-4081
+          <a href="mailto:sloy@hescomidstream.com">sloy@hescomidstream.com</a>
+        </div>
 
-</main>
+        <div class="owner-card">
+          <strong>Monte Burton</strong>
+          (281) 979-6049
+          <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
+        </div>
 
-<footer>
-  © <span id="year"></span> HESCO Midstream Company LLC
-</footer>
+        <div class="owner-card">
+          <strong>Morgan Saunders — CEO</strong>
+          (304) 780-9712
+          <a href="mailto:morgan.saunders@hescomidstream.com">
+            morgan.saunders@hescomidstream.com
+          </a>
+        </div>
+      </div>
+    </div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <div id="consultation" class="card">
+      <h2>Request a Consultation</h2>
+      <div class="form-group">
+        <input type="text" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email address">
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Brief description of your project, location, and timeline"></textarea>
+      </div>
+      <button class="submit">Send Request</button>
+    </div>
 
+  </div>
 </body>
 </html>
