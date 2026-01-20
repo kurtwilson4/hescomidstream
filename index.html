@@ -91,10 +91,18 @@
       font-weight: 500;
     }
 
+    /* ✅ OWNERS: lock layout to 2 columns so adding a 3rd card doesn't shrink/squeeze everything */
     .owners-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, minmax(260px, 1fr));
       gap: 20px;
+    }
+
+    /* Mobile: single column */
+    @media (max-width: 640px) {
+      .owners-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .owner-card {
@@ -102,6 +110,17 @@
       border: 1px solid var(--border-soft);
       border-radius: 14px;
       padding: 20px;
+    }
+
+    /* ✅ CEO card spans both columns on desktop (keeps original 2-card row intact) */
+    .owner-card--full {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 640px) {
+      .owner-card--full {
+        grid-column: auto;
+      }
     }
 
     .owner-card h3 {
@@ -188,13 +207,11 @@
           <a href="mailto:monte.burton@hescomidstream.com">monte.burton@hescomidstream.com</a>
         </div>
 
-        <!-- NEW CEO CARD -->
-        <div class="owner-card">
+        <!-- CEO (drops to its own row, keeping original layout intact) -->
+        <div class="owner-card owner-card--full">
           <h3>Morgan Saunders — CEO</h3>
           <p>(304) 780-9712</p>
-          <a href="mailto:morgan.saunders@hescomidstream.com">
-            morgan.saunders@hescomidstream.com
-          </a>
+          <a href="mailto:morgan.saunders@hescomidstream.com">morgan.saunders@hescomidstream.com</a>
         </div>
 
       </div>
